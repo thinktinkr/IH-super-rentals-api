@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: one
+  title: MyString
+  owner: MyString
+  city: MyString
+  latitude: 1.5
+  longitude: 1.5
+  category: Apartment
+  bedrooms: 1
+  image: MyString
+  description: MyText
+
+two:
+  id: two
+  title: MyString
+  owner: MyString
+  city: MyString
+  latitude: 1.5
+  longitude: 1.5
+  category: House
+  bedrooms: 1
+  image: MyString
+  description: MyText
