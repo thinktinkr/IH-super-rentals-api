@@ -7,16 +7,35 @@ This is a Ruby on Rails API intended to back the Ember tutorial https://guides.e
    - Built using Ruby 3.2.0, Rails 7.0.4.2, Bundler 2.4.1 -- others may work too.
    - Database is stock SQLite3
 
-## Getting Started
+## Making It Go
 
-1. Prepare a place for this for this project, I prefer using Docker containers.
-2. `git clone https://github.com/thinktinkr/IH-super-rentals-api.git`
-3. `cd IH-super-rentals-api`
-4. `bundle install`
-5. `bundle exec rake db:migrate`
-6. `bundle exec rails test`
-7. `bundle exec rake db:add_test_data`
-8. `bundle exec rails s`
+0. Install Docker Desktop if you don't have it already
+
+      https://www.docker.com/products/docker-desktop/
+
+1. Create the container from the latest ruby image
+      ```
+      docker run -d -it -p 8010:8010 --name IH_super_rental_api ruby /bin/bash
+      docker exec -it IH_super_rental_api /bin/bash
+      ```
+
+2. Update the container, install SQLite3, review versions
+      ```
+      apt update
+      apt install sqlite3 rails
+      ruby --version ; sqlite3 --version ; rails --version
+      ```
+
+3. Clone repo, build, test, and start API
+      ```
+      git clone https://github.com/thinktinkr/IH-super-rentals-api.git
+      cd IH-super-rentals-api
+      bundle install
+      bundle exec rake db:migrate
+      bundle exec rails test
+      bundle exec rake db:add_test_data
+      bundle exec rails s
+      ```
 
 ### Notes
 
