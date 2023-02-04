@@ -39,4 +39,8 @@ This is a Ruby on Rails API intended to back the Ember tutorial https://guides.e
 
 ### Notes
 
+   * The API is bound to `0.0.0.0:8010` in `config/puma.rb`.  The Ember front-end will look to `localhost:8010` for the API which maps into the Docker image.  
+      * If the API binding needs to move, then the Ember project's `app/adapters/application.js` will need to be updated.
+      * Conversely, if the Ember project bindings needs to move, then the API's `config/initializer/cors.rb` will need to be updated to permit cross-origin access to the data.
+
    * I flattened the Ember data model such that latitude and longitude are plain attributes of the Rental for simplicity and because I didn't see a compelling reason for a geographic Location to have many Rentals.
